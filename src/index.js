@@ -33,7 +33,7 @@ const cardImages = [
       card.dataset.index = index;
       card.addEventListener('click', flipCard);
       const cardImage = document.createElement('img');
-      cardImage.src = `../Assets/guviIcon.png`;
+      cardImage.src = `./Assets/guviIcon.png`;
       cardImage.setAttribute("class","w-full h-full object-cover");
       card.appendChild(cardImage);
       gameBoard.appendChild(card);
@@ -45,7 +45,7 @@ const cardImages = [
     // console.log(firstCard,secondCard)
     if (lockBoard || this === firstCard) return;
     const imgElement = this.querySelector('img');
-    imgElement.src = `../Assets/${this.dataset.image}`;
+    imgElement.src = `./Assets/${this.dataset.image}`;
     // console.log(this)
 
     if (!firstCard) {
@@ -66,8 +66,8 @@ const cardImages = [
       wrongAttempts++;
       attemptsDisplay.textContent = `Wrong Attempts: ${wrongAttempts}`;
       setTimeout(() => {
-        firstCard.querySelector('img').src = '../Assets/guviIcon.png';
-        secondCard.querySelector('img').src = '../Assets/guviIcon.png';
+        firstCard.querySelector('img').src = './Assets/guviIcon.png';
+        secondCard.querySelector('img').src = './Assets/guviIcon.png';
         resetCards();
       }, 1000);
     }
